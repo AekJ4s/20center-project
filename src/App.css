@@ -46,3 +46,36 @@
   display: Inline-block;
   padding: 30px 30px 5px 7px;
 }
+
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+body {
+  background-color: #00cc88b0; /* ปรับเปลี่ยนชื่อไฟล์รูปภาพตามที่คุณต้องการ */
+  background-size: cover; /* ปรับขนาดของรูปภาพให้เต็มขนาดพื้นที่ */
+  background-position: center; /* จัดการตำแหน่งรูปภาพ */
+  background-repeat: no-repeat; /* กำหนดให้รูปภาพไม่ทำซ้ำ */
+}
+
+.footer {
+  background-color: #ff7300b0;
+  height: 100px;
+}
+
+@media (max-width: 768px) {
+  .w-50 {
+    width: 100%;
+  }
+}
+
+/* CSS Media Query for iPhone 15 Pro Max */
+@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+  .MuiTable-root {
+    width: 90%; /* ปรับขนาดของตารางให้เต็มกว้างของหน้าจอ */
+    margin: auto; /* จัดตำแหน่งตารางตรงกลางหน้าจอ */
+  }
+}
