@@ -18,6 +18,7 @@ import box1 from '../assets/box1.jpg'
 import box2 from '../assets/box2.jpg'
 import box3 from '../assets/box3.jpg'
 import box4 from '../assets/box4.jpg'
+import { LastPage } from '@mui/icons-material'
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.success,
@@ -95,79 +96,24 @@ export default function DataTable() {
           </h5>
         </div>
 
-        <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={2}>
-            <Grid item xs={2}>
-              <div
-                className="card card-img mx-auto"
-                style={{
-                  width: '300px',
-                  height: '200px',
-                  backgroundImage: `url(${box1})`, // เพิ่ม background-image property และใช้ myImg ในการกำหนด URL ของรูปภาพ
-                  backgroundSize: 'cover', // กำหนดขนาดของรูปภาพให้เต็มพื้นที่ของ div
-                  backgroundPosition: 'center', // จัดตำแหน่งของรูปภาพให้อยู่ตรงกลาง
-                }}
-              ></div>
-            </Grid>
-            <Grid item xs={2}>
-              <div
-                className="card card-img mx-auto"
-                style={{
-                  width: '300px',
-                  height: '200px',
-                  backgroundImage: `url(${box2})`, // เพิ่ม background-image property และใช้ myImg ในการกำหนด URL ของรูปภาพ
-                  backgroundSize: 'cover', // กำหนดขนาดของรูปภาพให้เต็มพื้นที่ของ div
-                  backgroundPosition: 'center', // จัดตำแหน่งของรูปภาพให้อยู่ตรงกลาง
-                }}
-              ></div>
-            </Grid>
-
-            <Grid item xs={4}>
-              <div
-                className="card mt-3 bg-warning mx-auto p-4 rounded"
-                style={{ width: '400px', background: '#fff' }}
-              >
-                <form onSubmit={onSubmitForm} ref={form}>
-                  <input
-                    type="text"
-                    placeholder=" ' พิมพ์ชื่อสินค้า ' "
-                    name="ProductName"
-                    className="form-control form-control-sm text-center"
-                    required
-                  />
-                  <br />
-                  <button className=" btn btn-sm btn-success" type="submit">
-                    SEARCH
-                  </button>
-                </form>
-              </div>
-            </Grid>
-            <Grid item xs={2}>
-              <div
-                className="card card-img mx-auto"
-                style={{
-                  width: '300px',
-                  height: '200px',
-                  backgroundImage: `url(${box3})`, // เพิ่ม background-image property และใช้ myImg ในการกำหนด URL ของรูปภาพ
-                  backgroundSize: 'cover', // กำหนดขนาดของรูปภาพให้เต็มพื้นที่ของ div
-                  backgroundPosition: 'center', // จัดตำแหน่งของรูปภาพให้อยู่ตรงกลาง
-                }}
-              ></div>
-            </Grid>
-            <Grid item xs={2}>
-              <div
-                className="card card-img mx-auto"
-                style={{
-                  width: '300px',
-                  height: '200px',
-                  backgroundImage: `url(${box4})`, // เพิ่ม background-image property และใช้ myImg ในการกำหนด URL ของรูปภาพ
-                  backgroundSize: 'cover', // กำหนดขนาดของรูปภาพให้เต็มพื้นที่ของ div
-                  backgroundPosition: 'center', // จัดตำแหน่งของรูปภาพให้อยู่ตรงกลาง
-                }}
-              ></div>
-            </Grid>
-          </Grid>
-        </Box>
+        <div
+          className="card mt-3 bg-warning mx-auto p-4 rounded bg-success-subtle"
+          style={{ width: '400px', background: '#fff' }}
+        >
+          <form onSubmit={onSubmitForm} ref={form}>
+            <input
+              type="text"
+              placeholder=" ** พิมพ์ชื่อสินค้า **  "
+              name="ProductName"
+              className="form-control form-control-sm text-center mx-auto"
+              required
+            />
+            <br />
+            <button className=" btn btn-sm btn-success" type="submit">
+              SEARCH
+            </button>
+          </form>
+        </div>
 
         <div>
           <div className="m-2">
@@ -185,7 +131,7 @@ export default function DataTable() {
             >
               <ArrowBackIosNewRoundedIcon />
             </button>
-            <span>{`Page ${currentPage} / ${endIndex}`}</span>
+            <span>{`Page ${currentPage} / ${totalPages}`}</span>
             <button
               className=" btn btn-sm btn-info ms-3"
               onClick={nextPage}
@@ -203,7 +149,7 @@ export default function DataTable() {
           </div>
           <TableContainer className=" mt-3 ">
             <Table className=" text-center mx-auto w-50 font-weight-bold">
-              <TableHead>
+              <TableHead className="bg-success">
                 <TableRow>
                   <StyledTableCell align="center">รายการสินค้า</StyledTableCell>
                   <StyledTableCell align="center">ชื่อสินค้า</StyledTableCell>

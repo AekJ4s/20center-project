@@ -55,7 +55,7 @@
 }
 
 body {
-  background-color: #00cc88b0; /* ปรับเปลี่ยนชื่อไฟล์รูปภาพตามที่คุณต้องการ */
+  background-color: #ffffffb0; /* ปรับเปลี่ยนชื่อไฟล์รูปภาพตามที่คุณต้องการ */
   background-size: cover; /* ปรับขนาดของรูปภาพให้เต็มขนาดพื้นที่ */
   background-position: center; /* จัดการตำแหน่งรูปภาพ */
   background-repeat: no-repeat; /* กำหนดให้รูปภาพไม่ทำซ้ำ */
@@ -78,4 +78,11 @@ body {
     width: 90%; /* ปรับขนาดของตารางให้เต็มกว้างของหน้าจอ */
     margin: auto; /* จัดตำแหน่งตารางตรงกลางหน้าจอ */
   }
+}
+
+.showimg {
+  width: 150px;
+  height: 150px;
+  margin-inline-start: 50px;
+  border-block-start-width: 50px;
 }
